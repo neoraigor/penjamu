@@ -36,7 +36,7 @@ class AuditScheduleController extends Controller
         ]);
 
         AuditSchedule::create($validated);
-        return redirect()->route('audits.index')->with('success', 'Jadwal audit berhasil ditambahkan');
+        return redirect()->route('ami.audits.index')->with('success', 'Jadwal audit berhasil ditambahkan');
     }
 
     public function show(AuditSchedule $audit)
@@ -64,12 +64,12 @@ class AuditScheduleController extends Controller
         ]);
 
         $audit->update($validated);
-        return redirect()->route('audits.index')->with('success', 'Jadwal audit berhasil diupdate');
+        return redirect()->route('ami.audits.index')->with('success', 'Jadwal audit berhasil diupdate');
     }
 
     public function destroy(AuditSchedule $audit)
     {
         $audit->delete();
-        return redirect()->route('audits.index')->with('success', 'Jadwal audit berhasil dihapus');
+        return redirect()->route('ami.audits.index')->with('success', 'Jadwal audit berhasil dihapus');
     }
 }

@@ -27,7 +27,7 @@ class ProgramController extends Controller
         ]);
 
         Program::create($validated);
-        return redirect()->route('programs.index')->with('success', 'Program berhasil ditambahkan');
+        return redirect()->route('siakad.programs.index')->with('success', 'Program berhasil ditambahkan');
     }
 
     public function show(Program $program)
@@ -50,12 +50,12 @@ class ProgramController extends Controller
         ]);
 
         $program->update($validated);
-        return redirect()->route('programs.index')->with('success', 'Program berhasil diupdate');
+        return redirect()->route('siakad.programs.index')->with('success', 'Program berhasil diupdate');
     }
 
     public function destroy(Program $program)
     {
         $program->delete();
-        return redirect()->route('programs.index')->with('success', 'Program berhasil dihapus');
+        return redirect()->route('siakad.programs.index')->with('success', 'Program berhasil dihapus');
     }
 }
